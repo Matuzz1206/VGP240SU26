@@ -1,5 +1,5 @@
 SetResolution(11,10,25,true)
-SetColor(1.0,1.0,1.0)
+SetColor(1.0,0.0,0.0)
 
 # Row 0 (center)
 DrawPixel(5,0)
@@ -48,4 +48,5 @@ DrawPixel(7,5)
 DrawPixel(8,5)
 DrawPixel(9,5)
 DrawPixel(10,5)
+
 
