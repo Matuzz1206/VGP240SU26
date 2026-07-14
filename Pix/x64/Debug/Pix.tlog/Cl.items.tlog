@@ -1,8 +1,10 @@
 C:\VGP240\VGP240SU26\Pix\CmdDrawPixel.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdDrawPixel.obj
+C:\VGP240\VGP240SU26\Pix\CmdSetColor.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetColor.obj
 C:\VGP240\VGP240SU26\Pix\CmdSetResolution.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetResolution.obj
 C:\VGP240\VGP240SU26\Pix\CmdVarFloat.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdVarFloat.obj
 C:\VGP240\VGP240SU26\Pix\CommandDictionary.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CommandDictionary.obj
 C:\VGP240\VGP240SU26\Pix\Graphics.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\Graphics.obj
+C:\VGP240\VGP240SU26\Pix\MathHelper.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\MathHelper.obj
 C:\VGP240\VGP240SU26\Pix\PixEditor.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\PixEditor.obj
 C:\VGP240\VGP240SU26\Pix\Rasterizer.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\Rasterizer.obj
 C:\VGP240\VGP240SU26\Pix\ScriptParser.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\ScriptParser.obj
