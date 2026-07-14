@@ -1,0 +1,32 @@
+SetResolution(30, 30, 20, true)
+
+BeginDraw(point)
+
+Vertex(3, 7, 1, 0, 0)
+Vertex(2, 5, 0, 1, 0)
+Vertex(5, 9, 0, 0, 1)
+
+
+EndDraw()
+
+
+BeginDraw(line)
+
+Vertex(12, 2, 1, 0, 1)
+Vertex(18, 25, 0, 1, 1)
+
+EndDraw()
+
+
+SetFillMode(solid)
+
+BeginDraw(triangle)
+
+Vertex(2, 15, 1, 0, 1)
+Vertex(4, 24, 1, 1, 0)
+Vertex(15, 20, 0, 1, 0)
+
+EndDraw()
+
+
+

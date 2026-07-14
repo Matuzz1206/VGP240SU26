@@ -1,0 +1,21 @@
+#pragma once
+
+#include "command.h"
+
+class CmdEndDraw : public Command
+{
+	public:
+		const char* GetName() override
+		{
+			return "EndDraw";
+		}
+		const char* GetDescription() override
+		{
+			return 
+				"EndDraw()\n"
+				"\n"
+				"- stops storing vertices\n"
+				"- sends all stored vertices to the rasterizer\n";
+		}
+		bool Execute(const std::vector<std::string>& params) override;
+};
