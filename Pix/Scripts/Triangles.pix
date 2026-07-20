@@ -1,0 +1,36 @@
+SetResolution(30, 30, 20, true)
+
+#Triangle left
+
+SetFillMode(wireframe)
+
+BeginDraw(triangle)
+
+#Top (cyan)
+Vertex(8, 6, 0, 1, 1)
+
+#Bottom-left (magenta)
+Vertex(3, 22, 1, 0, 1)
+
+#Bottom-right (yellow)
+Vertex(14, 22, 1, 1, 0)
+
+EndDraw()
+
+#Triangle right
+
+SetFillMode(solid)
+
+BeginDraw(triangle)
+
+#Top (cyan)
+Vertex(22, 6, 0, 1, 1)
+
+#Bottom-left (magenta)
+Vertex(17, 22, 1, 0, 1)
+
+#Bottom-right (yellow)
+Vertex(28, 22, 1, 1, 0)
+
+EndDraw()
+

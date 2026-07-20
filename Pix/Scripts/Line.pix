@@ -1,0 +1,41 @@
+SetResolution(30, 30, 20, true)
+
+SetFillMode(wireframe)
+
+BeginDraw(line)
+
+
+#Right
+Vertex(15, 15, 1, 1, 1)
+Vertex(29, 15, 1, 0, 0)
+
+#Left
+Vertex(15, 15, 1, 1, 1)
+Vertex(0, 15, 0, 0, 1)
+
+#Up
+Vertex(15, 15, 1, 1, 1)
+Vertex(15, 1, 0, 1, 0)
+
+#Down
+Vertex(15, 15, 1, 1, 1)
+Vertex(15, 29, 1, 0, 1)
+
+#Up-right diagonal
+Vertex(15, 15, 1, 1, 1)
+Vertex(29, 1, 1, 1, 0)
+
+#Up-left diagonal
+Vertex(15, 15, 1, 1, 1)
+Vertex(1, 1, 0, 1, 1)
+
+#Down-right diagonal
+Vertex(15, 15, 1, 1, 1)
+Vertex(29, 29, 1, 0.5, 0)
+
+#Down-left diagonal
+Vertex(15, 15, 1, 1, 1)
+Vertex(1, 29, 0.5, 0, 1)
+
+EndDraw()
+
