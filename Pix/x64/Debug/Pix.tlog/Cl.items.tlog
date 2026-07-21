@@ -1,11 +1,14 @@
+C:\VGP240\VGP240SU26\Pix\Clipper.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\Clipper.obj
 C:\VGP240\VGP240SU26\Pix\CmdBeginDraw.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdBeginDraw.obj
 C:\VGP240\VGP240SU26\Pix\CmdDrawPixel.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdDrawPixel.obj
 C:\VGP240\VGP240SU26\Pix\CmdEndDraw.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdEndDraw.obj
+C:\VGP240\VGP240SU26\Pix\CmdSetClipping.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetClipping.obj
 C:\VGP240\VGP240SU26\Pix\CmdSetColor.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetColor.obj
 C:\VGP240\VGP240SU26\Pix\CmdSetFillMode.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetFillMode.obj
 C:\VGP240\VGP240SU26\Pix\CmdSetResolution.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdSetResolution.obj
 C:\VGP240\VGP240SU26\Pix\CmdVarFloat.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdVarFloat.obj
 C:\VGP240\VGP240SU26\Pix\CmdVertex.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmdVertex.obj
+C:\VGP240\VGP240SU26\Pix\CmsSetViewport.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CmsSetViewport.obj
 C:\VGP240\VGP240SU26\Pix\CommandDictionary.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\CommandDictionary.obj
 C:\VGP240\VGP240SU26\Pix\Graphics.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\Graphics.obj
 C:\VGP240\VGP240SU26\Pix\MathHelper.cpp;C:\VGP240\VGP240SU26\Pix\x64\Debug\MathHelper.obj
