@@ -12,10 +12,11 @@ class CmdBeginDraw : public Command
 		const char* GetDescription() override
 		{
 			return 
-				"BeginDraw(topology)\n"
+				"BeginDraw(topology, applyTransform)\n"
 				"\n"
 				"- starts storing vertices\n"
 				"- topology (point, line, triangle)\n";
+			"- optional) applyTransform (true, false) - whether to apply the current matrix stack transform to the vertices";
 		}
 		bool Execute(const std::vector<std::string>& params) override;
 };

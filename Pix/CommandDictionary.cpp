@@ -9,13 +9,14 @@
 #include "CmdSetFillMode.h"
 #include "CmdSetViewport.h"		
 #include "CmdSetClipping.h"
+#include "CmdMatrixStack.h"
+#include "CmdCamera.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
 	static CommandDictionary sInstance;
 	return &sInstance;
 }
-
 CommandDictionary::CommandDictionary()
 {
 	// Initialize dictionary
@@ -40,8 +41,22 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdVertex>();
 	RegisterCommand<CmdEndDraw>();
-}
 
+	//Matrix stack commands
+	RegisterCommand<CmdPushTranslation>();
+	RegisterCommand<CmdPushRotationX>();
+	RegisterCommand<CmdPushRotationY>();
+	RegisterCommand<CmdPushRotationZ>();
+	RegisterCommand<CmdPushScaling>();
+	RegisterCommand<CmdPopMatrix>();
+
+	//Camera commands
+	RegisterCommand<CmdSetCameraPosition>();
+	RegisterCommand<CmdSetCameraDirection>();
+	RegisterCommand<CmdSetCameraNear>();
+	RegisterCommand<CmdSetCameraFar>();
+	RegisterCommand<CmdSetCameraFov>();
+}
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
 {
 	TextEditor::LanguageDefinition langDef;

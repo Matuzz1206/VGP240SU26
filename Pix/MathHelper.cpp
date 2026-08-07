@@ -1,13 +1,21 @@
 #include "MathHelper.h"
 #include <cmath>
-bool MathHelper::CheckEqual(float a, float b) {
+bool MathHelper::CheckEqual(float a, float b) 
+{
 	return abs(a - b) < 0.001f;
 }
-
-float MathHelper::MagnitudeSquared(const Vector2& v) {
+void MathHelper::FlattenVectorScreenCoord(Vector3& v) 
+{
+	//screen space is only x and y
+	v.x = floor(v.x + 0.5f);
+	v.y = floor(v.y + 0.5f);
+}
+float MathHelper::MagnitudeSquared(const Vector2& v)
+{
 	return v.x * v.x + v.y * v.y;
 }
-float MathHelper::MagnitudeSquared(const Vector3& v) {
+float MathHelper::MagnitudeSquared(const Vector3& v) 
+{
 	return v.x * v.x + v.y * v.y + v.z * v.z;
 }
 

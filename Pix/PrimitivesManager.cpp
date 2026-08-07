@@ -1,6 +1,26 @@
 #include "PrimitivesManager.h"
 #include "Rasterizer.h"
 #include "Clipper.h"
+#include "MatrixStack.h"
+#include "Camera.h"
+
+extern float gResolutionX;
+extern float gResolutionY;
+
+namespace 
+{
+    Matrix4 GetScreenTransform() 
+    {
+		const float hw = gResolutionX * 0.5f;
+		const float hh = gResolutionY * 0.5f;
+        return{
+            hw, 0.0f, 0.0f, 0.0f,
+            0.0f, -hh, 0.0f, 0.0f,
+            0.0f, 0.0f, 1.0f, 0.0f,
+            hw, hh, 0.0f, 1.0f
+        };
+    }
+}
 
 PrimitivesManager::PrimitivesManager()
 {
@@ -10,10 +30,11 @@ PrimitivesManager* PrimitivesManager::Get()
     static PrimitivesManager sInstance;
     return &sInstance;
 }
-bool PrimitivesManager::BeginDraw(Topology topology)
+bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
     mVertexBuffer.clear();
     mTopology = topology;
+    mApplyTransform = applyTransform;
     mDrawBegin = true;
     return true;
 }
@@ -35,6 +56,19 @@ void PrimitivesManager::EndDraw()
         return;
 
     }
+
+    // apply transformation pipeline
+	//matLocal -> matWorld - > matView -> matProj -> matScreen
+	Matrix4 matWorld = MatrixStack::Get()->GetTransform();  
+    //view matrix from camera
+	Matrix4 matView = Camera::Get()->GetViewMatrix();
+	//projection matrix from camera
+	Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
+    // screen space matrix from the screen
+	Matrix4 matScreen = GetScreenTransform();
+	//full transformation pipeline
+	Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+
     switch (mTopology)
     {
     case Topology::Point:
@@ -69,6 +103,18 @@ void PrimitivesManager::EndDraw()
                  mVertexBuffer[i - 1],
                  mVertexBuffer[i]
             };
+            // from local to screen space via transformation pipeline
+            if (mApplyTransform)
+            {
+                for (size_t t = 0; t < triangle.size(); ++t)
+                {
+                    triangle[t].pos = MathHelper::TransformCoord(triangle[t].pos, matFinal);
+                    //after convertin to screen space make sure x and y are whole numbers
+                    MathHelper::FlattenVectorScreenCoord(triangle[t].pos);
+
+                }
+            }
+            // all done in screen space
             if (!Clipper::Get()->ClipTriangle(triangle))
             {
                 for (size_t t = 2; t < triangle.size(); ++t)

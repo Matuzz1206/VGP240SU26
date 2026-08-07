@@ -19,7 +19,7 @@ public:
 	static PrimitivesManager* Get();
 
 	//start accepting Vertices
-	bool BeginDraw(Topology topology);
+	bool BeginDraw(Topology topology, bool applyTransform);
     // add vertices to the manager
 	void AddVertex(const Vertex& v);
 	//send all the stored vertices to render as specifies
@@ -31,4 +31,5 @@ private:
 	std::vector<Vertex> mVertexBuffer;
 	Topology mTopology = Topology::Point;
 	bool mDrawBegin = false;
+	bool mApplyTransform = false;
 };
